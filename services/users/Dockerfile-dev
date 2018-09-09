@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 
 #copiamos entrypoint.sh
 COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
-RUN chmod +x /usr/src/app/entrypoint.sh
+#RUN chmod -R /usr/src/app/entrypoint.sh
 
 
 
@@ -24,4 +24,7 @@ RUN chmod +x /usr/src/app/entrypoint.sh
 COPY . /usr/src/app
 
 # ejecutamos el servidor
-CMD ["/usr/src/app/entrypoint.sh"]
+#CMD ["/usr/src/app/entrypoint.sh"]
+CMD ["sh","-c","chmod 777 /usr/src/app/entrypoint.sh && /usr/src/app/entrypoint.sh"] 
+
+#docker-compose -f docker-compose-dev.yml up -d --build
