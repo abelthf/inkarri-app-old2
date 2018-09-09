@@ -1,0 +1,15 @@
+# imagen base
+FROM python:3.7.0-alpine
+
+# configuracion de carpeta de trabajo
+WORKDIR /usr/src/app
+
+# copiar e instalar requerimientos
+COPY ./requirements.txt /usr/src/app/requirements.txt
+RUN pip install -r requirements.txt
+
+# copiar app
+COPY . /usr/src/app
+
+# ejecutamos el servidor
+CMD python manage.py run -h 0.0.0.0
