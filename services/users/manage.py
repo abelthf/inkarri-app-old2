@@ -5,7 +5,7 @@ from project import app, db
 cli = FlaskGroup(app)
 
 @cli.comand()
-def create_db():
+def recreate_db():
     db.drop_all()
     db.create_all()
     db.session.commit()
