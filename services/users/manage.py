@@ -20,6 +20,7 @@ def test():
         return 0
     return 1
 
+#$ docker-compose -f docker-compose-dev.yml up -d --build
 
 
 if __name__ == '__main__':
