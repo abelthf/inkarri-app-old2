@@ -5,10 +5,10 @@ from project.tests.base import BaseTestCase
 
 
 class TestUserService(BaseTestCase):
-    """Tests for the Users Service."""
+    """Tests para el servicio Users."""
 
     def test_users(self):
-        """Ensure the /ping route behaves correctly."""
+        """Nos aseguramos que la ruta /ping esta funcionando correctamente."""
         response = self.client.get('/users/ping')
         data = json.loads(response.data.decode())
         self.assertEqual(response.status_code, 200)
